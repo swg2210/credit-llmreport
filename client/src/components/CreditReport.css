@@ -464,6 +464,21 @@
   color: var(--danger-red);
 }
 
+.usage-circle.over-limit .usage-percentage {
+  color: var(--danger-red);
+  font-weight: 800;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 .usage-status {
   font-size: 14px;
   font-weight: 600;
@@ -2203,12 +2218,45 @@
   background: linear-gradient(to top, var(--primary-green-dark), var(--primary-green));
 }
 
+.bar-fill-vertical.red {
+  background: linear-gradient(to top, #DC2626, var(--danger-red));
+}
+
 .bar-fill-vertical.gray {
   background: linear-gradient(to top, var(--gray-600), var(--gray-500));
 }
 
 .bar-fill-vertical.light-gray {
   background: linear-gradient(to top, var(--gray-400), var(--gray-300));
+}
+
+.bar-container-vertical {
+  position: relative;
+}
+
+.over-limit-badge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--danger-red);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 .bar-value {

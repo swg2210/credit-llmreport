@@ -225,7 +225,7 @@ export const CreditReport = ({ creditInfo, llmAnalysis }: CreditReportProps) => 
 
           {/* 기존 원형 차트 */}
           <div className="usage-visual">
-            <div className={`usage-circle ${isHealthy ? 'healthy' : 'warning'}`}>
+            <div className={`usage-circle ${isHealthy ? 'healthy' : 'warning'} ${usageRate > 100 ? 'over-limit' : ''}`}>
               <svg viewBox="0 0 120 120" className="usage-circle-svg">
                 <defs>
                   <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -244,13 +244,15 @@ export const CreditReport = ({ creditInfo, llmAnalysis }: CreditReportProps) => 
                   r="54"
                   className="usage-circle-fill"
                   style={{
-                    strokeDasharray: `${(usageRate / 100) * 339.292} 339.292`,
+                    strokeDasharray: `${Math.min((usageRate / 100) * 339.292, 339.292)} 339.292`,
                   }}
                 />
               </svg>
               <div className="usage-circle-content">
                 <div className="usage-percentage">{usageRate.toFixed(1)}%</div>
-                <div className="usage-status">{isHealthy ? '건강' : '주의'}</div>
+                <div className="usage-status">
+                  {usageRate > 100 ? '한도 초과' : isHealthy ? '건강' : '주의'}
+                </div>
               </div>
             </div>
 
@@ -286,11 +288,14 @@ export const CreditReport = ({ creditInfo, llmAnalysis }: CreditReportProps) => 
                 <div className="bar-label-top">내 사용률</div>
                 <div className="bar-container-vertical">
                   <div
-                    className="bar-fill-vertical green"
+                    className={`bar-fill-vertical ${usageRate > 100 ? 'red' : 'green'}`}
                     style={{ height: `${Math.min(usageRate, 100)}%` }}
                   >
                     <span className="bar-value">{usageRate.toFixed(0)}%</span>
                   </div>
+                  {usageRate > 100 && (
+                    <div className="over-limit-badge">한도 초과</div>
+                  )}
                 </div>
               </div>
 
