@@ -433,10 +433,14 @@
 }
 
 .usage-circle.healthy .usage-circle-fill {
-  stroke: url(#blueGradient);
+  stroke: url(#greenGradient);
 }
 
 .usage-circle.warning .usage-circle-fill {
+  stroke: url(#redGradient);
+}
+
+.usage-circle.over-limit .usage-circle-fill {
   stroke: url(#redGradient);
 }
 
