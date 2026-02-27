@@ -1297,6 +1297,7 @@
   flex-direction: column;
   align-items: center;
   gap: calc(var(--space-unit) * 2);
+  height: 100%;
 }
 
 .bar-header {
@@ -2185,6 +2186,7 @@
   flex-direction: column;
   align-items: center;
   gap: calc(var(--space-unit) * 2);
+  height: 100%;
 }
 
 .bar-label-top {
