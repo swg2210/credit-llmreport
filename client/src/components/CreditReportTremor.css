@@ -1,0 +1,241 @@
+@import '@tremor/react/dist/esm/tremor.css';
+
+.credit-report-tremor {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F8F9FD 0%, #FFFFFF 100%);
+  padding: 40px 20px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hero Card - 신용점수 */
+.tremor-hero-card {
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  color: white !important;
+  padding: 32px !important;
+}
+
+.tremor-hero-card * {
+  color: white !important;
+}
+
+.tremor-score-row {
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tremor-score-label {
+  font-size: 20px;
+  opacity: 0.8;
+  margin-left: 4px;
+}
+
+.tremor-badges {
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tremor-score-grade {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tremor-comparison {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 40px;
+}
+
+.tremor-diff .positive {
+  color: #10B981 !important;
+}
+
+.tremor-diff .negative {
+  color: #EF4444 !important;
+}
+
+/* Insight Card */
+.tremor-insight-card {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  border-left: 4px solid #3B82F6;
+}
+
+.insight-header {
+  margin-bottom: 12px;
+}
+
+.tremor-insight-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.tremor-urgency {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #FEF3C7;
+  border-radius: 8px;
+  border-left: 3px solid #F59E0B;
+}
+
+.urgency-label {
+  color: #92400E;
+  font-weight: 600;
+}
+
+/* Card Usage */
+.tremor-card-usage {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #F9FAFB;
+  border-radius: 12px;
+}
+
+.tremor-value {
+  font-weight: 700;
+  color: #111827;
+}
+
+.tremor-usage-bar {
+  margin-top: 8px;
+}
+
+.tremor-progress {
+  margin-top: 8px;
+}
+
+.tremor-bar-chart {
+  margin-top: 24px;
+  height: 240px;
+}
+
+/* Action Card */
+.tremor-action-card {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+}
+
+.tremor-actions {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tremor-actions li {
+  padding-left: 24px;
+  position: relative;
+}
+
+.tremor-actions li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10B981;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tremor-actions li p {
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* CTA */
+.tremor-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 20px;
+}
+
+.tremor-cta-button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 17px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tremor-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.4);
+}
+
+.tremor-cta-desc {
+  color: #6B7280;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tremor-hero-card,
+.tremor-insight-card,
+.credit-report-tremor > * {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.tremor-hero-card {
+  animation-delay: 0.1s;
+}
+
+.tremor-insight-card {
+  animation-delay: 0.2s;
+}
+
+.credit-report-tremor > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.credit-report-tremor > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .credit-report-tremor {
+    padding: 24px 16px 60px;
+  }
+
+  .tremor-hero-card {
+    padding: 24px !important;
+  }
+
+  .tremor-comparison {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tremor-bar-chart {
+    height: 200px;
+  }
+}

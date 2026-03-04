@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CreditReport } from './components/CreditReport';
+import { CreditReportTremor } from './components/CreditReportTremor';
 import { CreditInfoForm } from './components/CreditInfoForm';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { ErrorMessage } from './components/ErrorMessage';
@@ -62,7 +63,8 @@ function App() {
       <button className="new-analysis-button" onClick={handleNewAnalysis}>
         새로운 분석하기
       </button>
-      <CreditReport creditInfo={creditInfo} llmAnalysis={llmAnalysis} />
+      {/* Tremor 버전 사용 (기존: CreditReport) */}
+      <CreditReportTremor creditInfo={creditInfo} llmAnalysis={llmAnalysis} />
     </div>
   );
 }
